@@ -8,7 +8,7 @@ public class BinarySearchTree {
         root = addHelper(root, newNode);
     }
 
-    public Node addHelper(Node root, Node newNode){
+    private Node addHelper(Node root, Node newNode){
         int data = newNode.data;
 
         if (root == null){
@@ -27,16 +27,43 @@ public class BinarySearchTree {
     }
 
     public void display(){
-        displayHelper(root);
-        System.out.println();
+
+        if (root == null){
+            System.out.println("Tree is empty.");
+        }
+        else {
+            displayHelper(root);
+            System.out.println();
+        }
     }
 
-    public void displayHelper(Node root){
+    private void displayHelper(Node root){
         if (root != null) {
             displayHelper(root.left);
             System.out.print(root.data + " ");
             displayHelper(root.right);
         }
+    }
+
+    public boolean search(int data){
+        return searchHelper(root, data);
+    }
+
+    private boolean searchHelper(Node root, int data){
+
+        if (root == null){
+            return false;
+        }
+        else if (root.data == data){
+            return true;
+        }
+        else if (root.data > data){
+            return searchHelper(root.left, data);
+        }
+        else{
+            return searchHelper(root.right, data);
+        }
+
     }
 }
 
