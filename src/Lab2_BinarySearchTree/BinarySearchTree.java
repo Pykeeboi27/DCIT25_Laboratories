@@ -24,7 +24,19 @@ public class BinarySearchTree {
         }
 
         return root;
+    }
 
+    public void display(){
+        displayHelper(root);
+        System.out.println();
+    }
+
+    public void displayHelper(Node root){
+        if (root != null) {
+            displayHelper(root.left);
+            System.out.print(root.data + " ");
+            displayHelper(root.right);
+        }
     }
 }
 

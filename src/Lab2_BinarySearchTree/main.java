@@ -14,5 +14,7 @@ public class main {
         tree.add(new Node(6));
         tree.add(new Node(4));
         tree.add(new Node(8));
+
+        tree.display();
     }
 }
