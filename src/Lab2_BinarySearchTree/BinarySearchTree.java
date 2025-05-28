@@ -1,18 +1,30 @@
 package Lab2_BinarySearchTree;
 
-class Node{
-
-    int data;
-    Node left;
-    Node right;
-
-    Node(int data){
-        this.data = data;
-    }
-}
-
 public class BinarySearchTree {
 
     Node root;
+
+    public void add(Node newNode){
+        root = addHelper(root, newNode);
+    }
+
+    public Node addHelper(Node root, Node newNode){
+        int data = newNode.data;
+
+        if (root == null){
+            root = newNode;
+            return root;
+        }
+
+        else if (data < root.data){
+            root.left = addHelper(root.left, newNode);
+        }
+        else {
+            root.right = addHelper(root.right, newNode);
+        }
+
+        return root;
+
+    }
 }
 
