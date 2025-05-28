@@ -72,7 +72,7 @@ public class BinarySearchTree {
 
     public void remove(int data){
         if (search(data)){
-            removeHelper(root, data);
+            root = removeHelper(root, data);
         }
         else{
             System.out.println(data + " could not be found.");
@@ -99,7 +99,7 @@ public class BinarySearchTree {
                 root.right = removeHelper(root.right, root.data);
             }
             else{
-                root.data = predeccessor(root);
+                root.data = predecessor(root);
                 root.left = removeHelper(root.left, root.data);
             }
         }
@@ -115,7 +115,7 @@ public class BinarySearchTree {
 
         return root.data;
     }
-    private int predeccessor(Node root){
+    private int predecessor(Node root){
         root = root.left;
 
         while(root.right != null){
