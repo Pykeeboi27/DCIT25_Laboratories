@@ -15,6 +15,10 @@ public class BinarySearchTree {
             root = newNode;
             return root;
         }
+        else if (data == root.data){
+            System.out.println(root.data + " is already in the list. Try again.");
+            return root;
+        }
 
         else if (data < root.data){
             root.left = addHelper(root.left, newNode);

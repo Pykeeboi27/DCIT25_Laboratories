@@ -5,18 +5,22 @@ public class main {
     public static void main(String[] args){
 
         BinarySearchTree tree = new BinarySearchTree();
-        tree.add(new Node(5));
-        tree.add(new Node(1));
-        tree.add(new Node(9));
-        tree.add(new Node(2));
-        tree.add(new Node(7));
-        tree.add(new Node(3));
-        tree.add(new Node(6));
-        tree.add(new Node(4));
-        tree.add(new Node(8));
+        tree.display();
+
+        tree.add(new Node(50));
+        tree.add(new Node(30));
+        tree.add(new Node(70));
+        tree.add(new Node(20));
+        tree.add(new Node(40));
+        tree.add(new Node(60));
+        tree.add(new Node(80));
 
         tree.display();
 
-        System.out.println(tree.search(1));
+        tree.add(new Node(80));
+        tree.add(new Node(20));
+        tree.add(new Node(30));
+
+
     }
 }
