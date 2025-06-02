@@ -80,17 +80,7 @@ public class MinHeap {
     }
 
     public void print(){
-        System.out.print("[");
-        for(int i = 0; i < heap.size(); i++){
-            if (i == heap.size() - 1){
-                System.out.print(heap.get(i));
-            }
-            else {
-                System.out.print(heap.get(i) + ", ");
-            }
-        }
-        System.out.print("]");
-        System.out.println();
+        System.out.println(heap);
 
     }
 
